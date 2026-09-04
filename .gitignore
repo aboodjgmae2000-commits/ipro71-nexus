@@ -1,0 +1,45 @@
+# Build directories
+build/
+CMakeFiles/
+*.cmake
+CMakeCache.txt
+
+# IDE
+.vs/
+.vscode/
+*.sln
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+*.code-workspace
+
+# Binaries
+*.exe
+*.dll
+*.lib
+*.obj
+*.o
+
+# Dependencies
+bin/
+lib/
+*.a
+*.so
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Python (ensure no Python files are included)
+__pycache__/
+*.py
+*.pyc
+*.pyo
+
+# Model files (can be large)
+model.onnx
+*.onnx
+
+# Temporary files
+*.tmp
+*.log
