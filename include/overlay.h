@@ -15,8 +15,8 @@
  */
 class Overlay {
 private:
-    HWND hwnd;
-    bool is_running;
+    HWND hwnd = nullptr;
+    bool is_running = false;
 
 public:
     Overlay();
