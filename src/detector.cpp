@@ -87,21 +87,21 @@ Detector::Detector(const wchar_t* model_path)
         std::cout << "[INFO] Number of inputs: " << session->GetInputCount() << std::endl;
         std::cout << "[INFO] Number of outputs: " << session->GetOutputCount() << std::endl;
 
-        // Get input names
+        // Get input names using GetInputNameAllocated
         Ort::AllocatorWithDefaultOptions allocator;
         for (size_t i = 0; i < session->GetInputCount(); ++i) {
-            auto name = session->GetInputName(i, allocator);
-            input_names.push_back(name);
-            std::cout << "[INFO] Input " << i << ": " << name << std::endl;
-            allocator.Free(name);
+            auto name_allocator = session->GetInputNameAllocated(i, allocator);
+            std::string input_name(name_allocator.get());
+            input_names.push_back(input_name);
+            std::cout << "[INFO] Input " << i << ": " << input_name << std::endl;
         }
 
-        // Get output names
+        // Get output names using GetOutputNameAllocated
         for (size_t i = 0; i < session->GetOutputCount(); ++i) {
-            auto name = session->GetOutputName(i, allocator);
-            output_names.push_back(name);
-            std::cout << "[INFO] Output " << i << ": " << name << std::endl;
-            allocator.Free(name);
+            auto name_allocator = session->GetOutputNameAllocated(i, allocator);
+            std::string output_name(name_allocator.get());
+            output_names.push_back(output_name);
+            std::cout << "[INFO] Output " << i << ": " << output_name << std::endl;
         }
 
         // Get input shape
