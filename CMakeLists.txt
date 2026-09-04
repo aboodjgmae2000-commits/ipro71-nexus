@@ -27,6 +27,8 @@ set(SOURCES
     src/capture.cpp
     src/detector.cpp
     src/input.cpp
+    src/overlay.cpp
+    src/target_selector.cpp
 )
 
 set(HEADERS
