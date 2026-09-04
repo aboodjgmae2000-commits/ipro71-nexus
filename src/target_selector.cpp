@@ -3,6 +3,7 @@
 #include "math_utils.h"
 #include <iostream>
 #include <algorithm>
+#include <limits>
 
 void TargetSelector::ConvertToScreenSpace(float& x, float& y,
                                           int capture_width, int capture_height,
