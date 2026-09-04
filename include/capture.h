@@ -12,10 +12,10 @@ class ScreenCapture {
 private:
     int width;
     int height;
-    HDC hdcScreen;
-    HDC hdcMem;
-    HBITMAP hBitmap;
-    BITMAPINFOHEADER bi;
+    HDC hdcScreen = nullptr;
+    HDC hdcMem = nullptr;
+    HBITMAP hBitmap = nullptr;
+    BITMAPINFOHEADER bi = {};
 
 public:
     /**
